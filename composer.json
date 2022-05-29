@@ -1,0 +1,19 @@
+{
+    "name": "mc/touch3d",
+    "description": "3D Editor for WordPress",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Martin Chorzewski",
+            "email": "mchorzewski@whitelabelcoders.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "./inc"
+        }
+    }
+}
