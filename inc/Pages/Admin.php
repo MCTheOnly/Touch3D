@@ -29,7 +29,7 @@ use \Inc\Api\Callbacks\AdminCallbacks;
 		
 		$this->setSubpages();
 
-		$this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->addSubPages( $this->subpages )->register();
+		$this->settings->addPages( $this->pages )->withSubPage( 'General' )->addSubPages( $this->subpages )->register();
 	}
 
 	public function setPages() {
@@ -39,7 +39,7 @@ use \Inc\Api\Callbacks\AdminCallbacks;
 				'menu_title' => 'Touch3D',
 				'capability' => 'manage_options',
 				'menu_slug'  => 'touch3d',
-				'callback'   => array( $this->callbacks, 'AdminDashboard' ),
+				'callback'   => array( $this->callbacks, 'AdminGeneral' ),
 				'icon_url'   => 'dashicons-image-filter',
 				'position'   => '110'
 			)
@@ -48,8 +48,8 @@ use \Inc\Api\Callbacks\AdminCallbacks;
 		$this->subpages = array(
 			array(
 				'parent_slug' => 'touch3d',
-				'page_title'  => 'General',
-				'menu_title'  => 'General',
+				'page_title'  => 'Scenes',
+				'menu_title'  => 'Scenes',
 				'capability'  => 'manage_options',
 				'menu_slug'   => 'touch3doptions',
 				'callback'    => array( $this->callbacks, 'AdminScenes' )
