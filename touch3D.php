@@ -32,3 +32,22 @@ register_deactivation_hook( __FILE__, 'deactivate_touch3D' );
 if ( class_exists( 'Inc\\Init' ) ) {
 	Inc\Init::register_services();
 }
+
+function create_post_type() {
+	
+	register_post_type( 'results',
+	
+		array(
+			'labels' => array(
+				'name'          => __( 'Results' ),
+				'singular_name' => __( 'Result' )
+			),
+			'public'                  => true,
+			'has_archive'             => true,
+			'rewrite'                 => array('slug' => 'results'),
+			'show_in_rest'            => true,
+		)
+	);
+}
+
+add_action( 'init', 'create_post_type' );

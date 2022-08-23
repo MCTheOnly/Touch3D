@@ -23,5 +23,6 @@ use \Inc\Base\BaseController;
 		//enqueue scripts & styles
 		wp_enqueue_style( 'touchstyle', $this->plugin_url . 'assets/touchstyle.css', __FILE__ );
 		wp_enqueue_script( 'touchjs', $this->plugin_url . 'assets/touchjs.js', __FILE__ );
+		wp_enqueue_script( 'touch3djs', $this->plugin_url . 'build/index.js', __FILE__ );
 	}
 }
