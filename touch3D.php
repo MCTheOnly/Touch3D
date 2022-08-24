@@ -142,23 +142,23 @@ function form_shortcode() {
 		
 		<?php
 		$content = array(
-			"nazwa"         => $nazwa,
-			"kwota_netto"   => $kwota_netto,
-			'podatek'       => $podatek,
-			"kwota_podatku" => $kwota_podatku,
-			"kwota_brutto"  => $kwota_brutto,
-			"IP"            => get_user_ip(),
-			"data"          => $data
+			"nazwa"         => __( $nazwa ),
+			"kwota_netto"   => __( $kwota_netto ),
+			'podatek'       => __( $podatek ),
+			"kwota_podatku" => __( $kwota_podatku ),
+			"kwota_brutto"  => __( $kwota_brutto ),
+			"IP"            => __( get_user_ip() ),
+			"data"          => __( $data ),
 		);
 
 		$post_id = wp_insert_post(array (
 
-			'post_type'      => 'results',
-			'post_title'     => $nazwa . " " . $data,
-			'post_content'   => json_encode( $content ),
-			'post_status'    => 'publish',
-			'comment_status' => 'closed',
-			'ping_status'    => 'closed',
+			'post_type'      => __( 'results' ),
+			'post_title'     => __( $nazwa . " " . $data ),
+			'post_content'   => __( json_encode( $content ) ),
+			'post_status'    => __( 'publish' ),
+			'comment_status' => __( 'closed' ),
+			'ping_status'    => __( 'closed' ),
 		));
 	}
 	return ob_get_clean();
